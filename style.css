@@ -7,6 +7,7 @@
   --defaltPaddingMargin: 20px;
 
   --textPaddingMargin: 40px;
+  --textCardMargin: 20px;
 
   --defaltBoxSizeW: 40vw;
   --defaltBoxSizeV: 45vh;
@@ -48,21 +49,6 @@
   --glassBoxShadow: rgba(31, 38, 135, 0.37)
 }
 
-
-@media screen and (min-width: 40.375em) {
-  .footerNav>* {
-    flex: 1;
-  }
-
-  .footerBox {
-    flex: 1 0px;
-  }
-
-  .footerNav {
-    flex: 2 0px;
-  }
-}
-
 @media screen and (max-width: 40.375em) {
   :root {
 
@@ -71,10 +57,11 @@
     /* ================== */
 
     --defaltPaddingMargin: 10px;
-
+    
     --textPaddingMargin: 40px;
+    --textCardMargin: 30px;
 
-    --defaltBoxSizeW: 40vw;
+    --defaltBoxSizeW: 90vw;
     --defaltBoxSizeV: 45vh;
 
     --defaltBoxInnerSizeW: 80vw;
@@ -123,8 +110,6 @@ body {
 
   font-family: monospace;
   font-size: 20px;
-
-
 }
 
 .header {
@@ -221,6 +206,7 @@ body {
 .flip-card-front img {
   width: 100%;
   height: 100%;
+  object-fit:scale-down;
   border-radius: var(--sectionBorderRadius);
 }
 
@@ -233,21 +219,19 @@ body {
 .flip-card-back img {
   width: 140px;
   margin-top: 1rem;
+  object-fit:scale-down;
+  border-radius: var(--sectionBorderRadius);
 }
 
-.flip-card-back h3 {
+.flip-card-back h3{
+  margin: var(--textCardMargin);
   margin-bottom: 0.3rem;
   font-size: 20px;
 }
 
 .flip-card-back h1 {
-  margin: 0;
+  margin: var(--textCardMargin);
 }
-
-
-
-
-
 
 
 ::-webkit-scrollbar {
@@ -272,14 +256,8 @@ body::-webkit-scrollbar-track {
 }
 
 
-
-
-
-
-
 *,
-*:before,
-*:after {
+*:before,*:after {
   box-sizing: border-box;
 }
 
@@ -288,8 +266,8 @@ body::-webkit-scrollbar-track {
   /* Posicionamento */
   /* ============== */
 
-  /* width: 100%; */
-  /* bottom: 0; */
+  width: 100%;
+  bottom: 0;
 
 
   grid-template-rows: auto 1fr auto;
@@ -310,6 +288,7 @@ body::-webkit-scrollbar-track {
   flex-flow: row wrap;
   align-items: start;
   display: flex;
+  
 
   /* ========= */
   /* Aparência */
@@ -320,7 +299,7 @@ body::-webkit-scrollbar-track {
   color: var(--footerColor);
 }
 
-.footer>* {
+.footer > * {
   flex: 1 100%;
 }
 
@@ -383,11 +362,25 @@ body::-webkit-scrollbar-track {
   flex-flow: row wrap;
 }
 
-.footerNav>* {
+.footerNav > * {
   flex: 1 50%;
   margin-right: 1.25em;
 }
 
 .navUl a {
   color: var(--footerColorNav);
+}
+
+@media screen and (min-width: 40.375em) {
+  .footerNav>* {
+    flex: 1;
+  }
+
+  .footerBox {
+    flex: 1 0px;
+  }
+
+  .footerNav {
+    flex: 2 0px;
+  }
 }
