@@ -117,7 +117,7 @@ body {
   display: flex;
   flex-direction: column;
 
-  /* font-family: monospace; */
+  font-family: monospace;
   font-family: 'Tech';
   font-size: 20px;
 }
