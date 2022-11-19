@@ -17,6 +17,8 @@
 
   --sectionBorderRadius: 16px;
 
+  --fontSize: 20px;
+
 
   /* =============== */
   /* Paleta de Cores */
@@ -46,7 +48,13 @@
   --footerButtonColor: rgb(33, 33, 33, 0.07);
 
   --glassBorder: rgba(255, 255, 255, 0.18);
-  --glassBoxShadow: rgba(31, 38, 135, 0.37)
+  --glassBoxShadow: rgba(31, 38, 135, 0.37);
+
+  /* ===== */
+  /* Geral */
+  /* ===== */
+
+  --display: none;
 }
 
 @media screen and (max-width: 40.375em) {
@@ -67,22 +75,15 @@
     --defaltBoxInnerSizeW: 80vw;
     --defaltBoxInnerSizeV: 40vh;
 
-  }
+    --fontSize: 15px;
 
-  #headerTitle {
-    font-size: 15px;
-    margin: var(--defaltPaddingMargin);
-  }
+  /* ===== */
+  /* Geral */
+  /* ===== */
 
-  #menu-img {
-    margin: var(--defaltPaddingMargin);
-  }
+    --display: flex;
 
-  .topics-title {
-    margin: var(--textPaddingMargin);
-    text-align: center;
   }
-
 }
 
 html {
@@ -140,9 +141,14 @@ body {
 }
 
 #headerTitle {
-  font-size: 20px;
+  font-size: var(--fontSize);
   margin: var(--defaltPaddingMargin);
 
+}
+
+.mobile-toolTips{
+  display: var(--display);
+  margin: var(--textPaddingMargin);
 }
 
 .main {
@@ -157,8 +163,9 @@ body {
 }
 
 .topics-title {
-  margin-top: var(--textPaddingMargin);
-  margin-bottom: var(--textPaddingMargin);
+  margin: var(--textPaddingMargin);
+  margin: var(--textPaddingMargin);
+  text-align: center;
 }
 
 .topics {
@@ -194,7 +201,7 @@ body {
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border-radius: 16px;
+  border-radius: var(--sectionBorderRadius);
 }
 
 .flip-card-front {
