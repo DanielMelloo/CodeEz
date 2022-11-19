@@ -59,9 +59,9 @@
 
 @font-face {
   font-family: 'Tech';
-  src: url('/fonts/fsex300-webfont.ttf') format('truetype'),
-  url('/fonts/fsex300-webfont.svg') format('svg'),
-  url('/fonts/fsex300-webfont.eot') format('embedded-opentype');
+  src: url('fsex300-webfont.ttf') format('truetype'),
+  url('fsex300-webfont.svg') format('svg'),
+  url('fsex300-webfont.eot') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
