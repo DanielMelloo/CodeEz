@@ -148,7 +148,10 @@ body {
 
 .mobile-toolTips{
   display: var(--display);
-  margin: var(--textPaddingMargin);
+  margin-top: var(--textPaddingMargin);
+  margin-bottom: 0;
+  margin-left: var(--defaltPaddingMargin);
+  margin-right: var(--defaltPaddingMargin);
 }
 
 .main {
