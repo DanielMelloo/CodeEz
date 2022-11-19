@@ -57,6 +57,15 @@
   --display: none;
 }
 
+@font-face {
+  font-family: 'Tech';
+  src: url('/fonts/fsex300-webfont.ttf') format('truetype'),
+  url('/fonts/fsex300-webfont.svg') format('svg'),
+  url('/fonts/fsex300-webfont.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @media screen and (max-width: 40.375em) {
   :root {
 
@@ -108,8 +117,8 @@ body {
   display: flex;
   flex-direction: column;
 
-
-  font-family: monospace;
+  /* font-family: monospace; */
+  font-family: 'Tech';
   font-size: 20px;
 }
 
@@ -224,6 +233,7 @@ body {
   background-image: linear-gradient(315deg, var(--color1), var(--color5));
   color: var(--fontColor);
   transform: rotateY(180deg);
+  overflow: auto;
 }
 
 .flip-card-back img {
