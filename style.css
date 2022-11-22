@@ -19,6 +19,8 @@
 
   --fontSize: 20px;
 
+  --defaltTopicsTitleSizeV: 0;
+
 
   /* =============== */
   /* Paleta de Cores */
@@ -59,9 +61,9 @@
 
 @font-face {
   font-family: 'Tech';
-  src: url('fsex300-webfont.ttf') format('truetype'),
-  url('fsex300-webfont.svg') format('svg'),
-  url('fsex300-webfont.eot') format('embedded-opentype');
+  src: url('./fonts/fsex300-webfont.ttf') format('truetype'),
+  url('./fonts/fsex300-webfont.svg') format('svg'),
+  url('./fonts/fsex300-webfont.eot') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -86,6 +88,8 @@
 
     --fontSize: 15px;
 
+    --defaltTopicsTitleSizeV: 10vh;
+
   /* ===== */
   /* Geral */
   /* ===== */
@@ -93,6 +97,41 @@
     --display: flex;
 
   }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  font-size: var(--fontSize);
+
+  display: var(--display);
+  margin-top: var(--textPaddingMargin);
+  margin-bottom: 0;
+  margin-left: var(--defaltPaddingMargin);
+  margin-right: var(--defaltPaddingMargin);
+}
+
+.container h3 span.cursor {
+  display: inline-block;
+  background-color: var(--fontColor);
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+.container h3 span.cursor.typing {
+  animation: none;
+}
+
+@keyframes blink {
+  0%  { background-color: var(--color5); }
+  49% { background-color: var(--color5); }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100%  { background-color: var(--color5); }
 }
 
 html {
@@ -178,6 +217,7 @@ body {
   margin: var(--textPaddingMargin);
   margin: var(--textPaddingMargin);
   text-align: center;
+  height: var(--defaltTopicsTitleSizeV);
 }
 
 .topics {
@@ -403,4 +443,31 @@ body::-webkit-scrollbar-track {
   .footerNav {
     flex: 2 0px;
   }
+}
+
+
+.typing-effect h3{
+  margin: 0;
+}
+
+.typing-effect{  
+  /* margin: var(--textCardMargin); */
+  
+  align-items: center;
+  height: fit-content;
+  overflow: hidden;
+  border-right: 2px solid;
+  width: 0;
+  white-space: nowrap;
+  animation: typing 3s steps(44) infinite alternate-reverse;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes typing-back {
+  from { width: 100% }
+  to { width: 0 }
 }
