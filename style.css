@@ -566,3 +566,7 @@ body::-webkit-scrollbar-track {
   width: var(--defaltWidthRoadMap);
   height: var(--defaltHeightRoadMap);
 }
+
+.toolTips {
+  margin-top: var(--textPaddingMargin);
+}
