@@ -21,6 +21,9 @@
 
   --defaltTopicsTitleSizeV: 0;
 
+  --defaltWidthRoadMap: 75vw;
+  --defaltHeightRoadMap: 80vh;
+
 
   /* =============== */
   /* Paleta de Cores */
@@ -90,6 +93,10 @@
     --fontSize: 15px;
 
     --defaltTopicsTitleSizeV: 10vh;
+
+    --defaltWidthRoadMap: 80vw;
+    --defaltHeightRoadMap: 75vh;
+
 
   /* ===== */
   /* Geral */
@@ -203,20 +210,29 @@ body {
   backdrop-filter: blur(19px);
   -webkit-backdrop-filter: blur(19px);
   border: 1px solid var(--glassBorder);
+
+
+  font-size: var(--fontSize);
+}
+
+#options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#projects {
+  margin: var(--defaltPaddingMargin);
 }
 
 #menu-img {
   width: 32px;
   margin: var(--defaltPaddingMargin);
   cursor: pointer;
-
-
 }
 
 #headerTitle {
-  font-size: var(--fontSize);
   margin: var(--defaltPaddingMargin);
-
 }
 
 .mobile-toolTips{
@@ -542,4 +558,10 @@ body::-webkit-scrollbar-track {
   /* width="768" height="432" 
   src="https://miro.com/app/live-embed/uXjVPA2Yxo0=/?moveToViewport=60,-87,911,417&embedId=616819663725" 
   frameborder="0" scrolling="no" allowfullscreen></iframe> */
+}
+
+#iframeRoadMap{
+  /* max-width: var(--defaltMaxWidthRoadMap); */
+  width: var(--defaltWidthRoadMap);
+  height: var(--defaltHeightRoadMap);
 }

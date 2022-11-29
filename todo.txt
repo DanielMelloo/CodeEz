@@ -1,0 +1,16 @@
+{ Ainda não feito
+
+    Fazer o menu
+
+    Mudar array pra const no script do typing effect
+}
+
+{   Feito
+
+    ajeitar o layout do site para mobile (roadMap)
+
+    ajeitar elementos da head
+
+    ajeitar typping effect
+}
+
