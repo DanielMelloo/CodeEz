@@ -41,6 +41,7 @@
 
   --backgroudPgColor: #0fed16;
   --backgroudMainColor: var(--color4);
+  --backgroundImageGradient: linear-gradient(45deg, var(--color1), var(--color5));
 
   --footerBackground: #f4f4f4;
   ;
@@ -115,6 +116,10 @@
   margin-right: var(--defaltPaddingMargin);
 }
 
+.std-display {
+  display: flex;
+}
+
 .container h3 span.cursor {
   display: inline-block;
   background-color: var(--fontColor);
@@ -125,6 +130,25 @@
 .container h3 span.cursor.typing {
   animation: none;
 }
+
+.container-swap {
+  font-size: var(--fontSize);
+
+  flex-direction: column;
+}
+
+.container-swap h3 span.cursor {
+  display: inline-block;
+  /* align-self: flex-start; */
+  background-color: var(--fontColor);
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+.container-swap h3 span.cursor.typing {
+  animation: none;
+}
+
 
 @keyframes blink {
   0%  { background-color: var(--color5); }
@@ -140,6 +164,7 @@ html {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 body {
@@ -204,12 +229,13 @@ body {
 
 .main {
   width: 100%;
-  height: 100%;
+  height: auto;
   background-color: var(--backgroudMainColor);
 
   display: flex;
   align-items: center;
   flex-direction: column;
+  
 
 }
 
@@ -223,6 +249,39 @@ body {
 .topics {
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+}
+
+.topicsTextInner { 
+  height: var(--defaltBoxSizeV);
+  width: var(--defaltBoxSizeW);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-image: var(--backgroundImageGradient);
+  border-radius: var(--sectionBorderRadius);
+}
+
+.topicsTextInner h2{
+  padding-bottom: var(--textPaddingMargin);
+}
+
+.topicsTextInner h3{
+  padding-left: var(--defaltPaddingMargin );
+  padding-right: var(--defaltPaddingMargin);
+  text-align: center;
+  
+}
+
+#projetosIndex {
+  cursor: pointer;
 }
 
 .flip-card {
@@ -470,4 +529,17 @@ body::-webkit-scrollbar-track {
 @keyframes typing-back {
   from { width: 100% }
   to { width: 0 }
+}
+
+#RoadMap{
+  width: auto;
+  padding: var(--defaltPaddingMargin);
+  margin: var(--defaltPaddingMargin);
+  /* height: ; */
+  border-radius: var(--sectionBorderRadius);
+  background-image: var(--backgroundImageGradient);
+
+  /* width="768" height="432" 
+  src="https://miro.com/app/live-embed/uXjVPA2Yxo0=/?moveToViewport=60,-87,911,417&embedId=616819663725" 
+  frameborder="0" scrolling="no" allowfullscreen></iframe> */
 }
