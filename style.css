@@ -297,8 +297,13 @@ body {
   padding-left: var(--defaltPaddingMargin );
   padding-right: var(--defaltPaddingMargin);
   text-align: center;
-  
-  
+
+}
+
+.buttons h3{
+  padding-left: var(--defaltPaddingMargin );
+  padding-right: var(--defaltPaddingMargin);
+  text-align: center;
 }
 
 .Info h3{
