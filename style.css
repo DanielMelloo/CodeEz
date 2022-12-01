@@ -61,7 +61,9 @@
   /* ===== */
 
   --display: none;
+  scroll-behavior: smooth;
 }
+
 
 @font-face {
   font-family: 'Tech';
@@ -184,7 +186,7 @@ body {
   background-color: var(--backgroudPgColor);
   max-width: 100%;
   width: 100vw;
-  height: 150vh;
+  /* height: 150vh; */
   display: flex;
   flex-direction: column;
 
@@ -247,6 +249,7 @@ body {
 .main {
   width: 100%;
   height: auto;
+  min-height: 80vh;
   background-color: var(--backgroudMainColor);
 
   display: flex;
@@ -295,9 +298,28 @@ body {
   padding-right: var(--defaltPaddingMargin);
   text-align: center;
   
+  
+}
+
+.Info h3{
+  margin-top: 2ch;
 }
 
 #projetosIndex {
+  cursor: pointer;
+}
+
+#roadMapIndex{
+  padding-top: 10vh;
+}
+
+.buttons {
+  width: auto;
+  height: auto;
+  padding: var(--defaltPaddingMargin);
+  border-radius: 48px;
+  background-image: var(--backgroundImageGradient);
+  margin: var(--defaltPaddingMargin);
   cursor: pointer;
 }
 
