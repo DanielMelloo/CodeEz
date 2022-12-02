@@ -274,11 +274,12 @@ body {
 
 }
 
+
 .topics-title {
   margin: var(--textPaddingMargin);
-  margin: var(--textPaddingMargin);
+  margin-bottom: 0;
   text-align: center;
-  height: var(--defaltTopicsTitleSizeV);
+  min-height: var(--defaltTopicsTitleSizeV);
 }
 
 .topics {
@@ -358,6 +359,7 @@ body {
 .flip-card-inner {
   position: relative;
   width: 100%;
+  min-height: fit-content;
   height: 100%;
   text-align: center;
   transition: transform 0.6s;
