@@ -1,3 +1,9 @@
+// $(document).ready(function() { 
+//   window.location.href='#roadMapIndex';
+//   });
+
+
+
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
@@ -41,6 +47,49 @@ document.addEventListener("DOMContentLoaded", function() { // On DOM Load initia
 });
 
 
+
+
+const typedTextSpanToolTips = document.querySelector(".typedTextToolTips");
+const cursorSpanToolTips = document.querySelector(".cursorToolTips");
+
+const textArrayToolTips = ["<-- Clique no card para mais informações -->"];
+const typingDelayToolTips = 50;
+const erasingDelayToolTips = 5;
+const newTextDelayToolTips = 2000; // Delay between current and next text
+let textArrayToolTipsIndexToolTips = 0;
+let charIndexToolTips = 0;
+
+function typeToolTips() {
+  if (charIndexToolTips < textArrayToolTips[textArrayToolTipsIndexToolTips].length) {
+    if(!cursorSpanToolTips.classList.contains("typing")) cursorSpanToolTips.classList.add("typing");
+    typedTextSpanToolTips.textContent += textArrayToolTips[textArrayToolTipsIndexToolTips].charAt(charIndexToolTips);
+    charIndexToolTips++;
+    setTimeout(typeToolTips, typingDelayToolTips);
+  } 
+  else {
+    cursorSpanToolTips.classList.remove("typing");
+  	setTimeout(eraseToolTips, newTextDelayToolTips);
+  }
+}
+
+function eraseToolTips() {
+	if (charIndexToolTips > 0) {
+    if(!cursorSpanToolTips.classList.contains("typing")) cursorSpanToolTips.classList.add("typing");
+    typedTextSpanToolTips.textContent = textArrayToolTips[textArrayToolTipsIndexToolTips].substring(0, charIndexToolTips-1);
+    charIndexToolTips--;
+    setTimeout(eraseToolTips, erasingDelayToolTips);
+  } 
+  else {
+    cursorSpanToolTips.classList.remove("typing");
+    textArrayToolTipsIndexToolTips++;
+    if(textArrayToolTipsIndexToolTips>=textArrayToolTips.length) textArrayToolTipsIndexToolTips=0;
+    setTimeout(typeToolTips, typingDelayToolTips + 1100);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
+  if(textArrayToolTips.length) setTimeout(typeToolTips, newTextDelayToolTips + 250);
+});
 
 
 
