@@ -43,6 +43,8 @@
   --color5: #a4ffff;
 
   --hoverColor: rgba(5, 5, 5, 0.4);
+  /* --hoverColor2: rgba(13, 0, 255, 0.952); */
+  --hoverColor2:var(--color5);
 
   --fontColor: black;
 
@@ -54,7 +56,7 @@
   --backgroundImageGradient: linear-gradient(45deg, var(--color1), var(--color5));
 
   --footerBackground: #f4f4f4;
-  ;
+  
   --footerBorder: #e5e5e5;
   --footerColor: #2f2f2f;
   --footerColorNav: #999;
@@ -712,7 +714,7 @@ body::-webkit-scrollbar-track {
 
 #menuToggle a:hover
 {
-  color: tomato;
+  color: var(--hoverColor2);
 }
 
 
@@ -731,9 +733,6 @@ body::-webkit-scrollbar-track {
   -webkit-touch-callout: none;
 }
 
-/*
-* Just a quick hamburger
-*/
 #menuToggle span
 {
   display: block;
@@ -764,10 +763,7 @@ body::-webkit-scrollbar-track {
   transform-origin: 0% -100%;
 }
 
-/* 
-* Transform all the slices of hamburger
-* into a crossmark.
-*/
+
 #menuToggle input:checked ~ span
 {
   opacity: 1;
@@ -775,27 +771,18 @@ body::-webkit-scrollbar-track {
   background: var(--footerColor);
 }
 
-/*
-* But let's hide the middle one.
-*/
+
 #menuToggle input:checked ~ span:nth-last-child(3)
 {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-/*
-* Ohyeah and the last one should go the other direction
-*/
 #menuToggle input:checked ~ span:nth-last-child(2)
 {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
-/*
-* Make this absolute positioned
-* at the top left of the screen
-*/
 #menu
 {
   position: absolute;
@@ -821,9 +808,7 @@ body::-webkit-scrollbar-track {
   font-size: 22px;
 }
 
-/*
-* And let's slide it in from the left
-*/
+
 #menuToggle input:checked ~ ul
 {
   transform: none;
