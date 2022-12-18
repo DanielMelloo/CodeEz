@@ -18,6 +18,7 @@
   --sectionBorderRadius: 16px;
 
   --fontSize: 20px;
+  --fontSizeMenu: 20vh;
 
   --defaltTopicsTitleSizeV: 0;
 
@@ -680,8 +681,6 @@ body::-webkit-scrollbar-track {
 
 
 
-
-
 #menuToggle{  
   display: block;
 
@@ -763,16 +762,14 @@ body::-webkit-scrollbar-track {
 
 #menu{
   position: absolute;
-  min-width: 300px;
+  min-width: 250px;
+  width: auto;
   height: auto;
-  /* margin: 0 -50px 0 0; */
   margin: -50px 0 0 -200px;
   padding: var(--defaltPaddingMargin);
   padding-top: 50px;
 
-  /* background: #162447; */
   border-radius: 8px;
-  overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, .5);
   
   background: var(--color3);
@@ -788,12 +785,13 @@ body::-webkit-scrollbar-track {
 
 .menu li{
   padding: 10px;
-  font-size: 22px;
+  font-size: var(--fontSizeMenu);
   
 }
 
 #menuToggle input:checked ~ ul{
   transform: none;
+  right: 0;
 }
 
 #menu {
