@@ -766,7 +766,7 @@ body::-webkit-scrollbar-track {
   min-width: 250px;
   width: auto;
   height: auto;
-  margin: -50px 0 0 -200px;
+  margin: -50px 0 0 -180px;
   padding: var(--defaltPaddingMargin);
   padding-top: 50px;
 
@@ -799,7 +799,6 @@ body::-webkit-scrollbar-track {
   background-color: var(--color3);
   list-style: none;
   z-index: 2;
-  
 }
 
 #menu li{

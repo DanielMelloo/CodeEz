@@ -3,6 +3,17 @@
 //   });
 
 
+var checkbox = $('#button-menu');
+
+$('body').not('menuNav').click(function() {
+  checkbox.prop("checked", false);
+});
+
+$('#button-menu, #menuNav').click(function(event) {
+  event.stopPropagation();
+
+});
+
 
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
@@ -139,5 +150,7 @@ function eraseS() {
 document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
   if(textArrayS.length) setTimeout(typeS, newTextDelayS + 250);
 });
+
+
 
 
