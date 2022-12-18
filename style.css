@@ -242,6 +242,7 @@ body {
 
 
   font-size: var(--fontSize);
+  z-index: 2;
 }
 
 .headerInv {
@@ -249,6 +250,7 @@ body {
   height: 15vh;
   max-height: 72px;
   width: 100%;
+  z-index: 1;
 }
 
 .menu {
@@ -315,8 +317,6 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  
-
 }
 
 
@@ -330,6 +330,7 @@ body {
 .topics {
   margin-top: 50px;
   margin-bottom: 50px;
+  z-index: 1;
 }
 
 .article {
@@ -421,7 +422,6 @@ body {
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-
 }
 
 .flip-card:hover .flip-card-inner {
@@ -437,12 +437,11 @@ body {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: var(--sectionBorderRadius);
-  
 }
 
 .flip-card-front {
   padding: var(--defaltPaddingMargin);
-  background-image: linear-gradient(45deg, var(--color1), var(--color5))
+  background-image: linear-gradient(45deg, var(--color1), var(--color5));
 
 }
 
@@ -688,15 +687,17 @@ body::-webkit-scrollbar-track {
 
   padding: var(--defaltPaddingMargin);
   
-  z-index: 2;
+  z-index: 3;
   
   -webkit-user-select: none;
   user-select: none;
+
 }
 
 #menuToggle a{
   text-decoration: none;
   color: #232323;
+  
   transition: color 0.3s ease;
 }
 
@@ -713,7 +714,7 @@ body::-webkit-scrollbar-track {
   cursor: pointer;
   
   opacity: 0; /* hide this */
-  z-index: 2;
+  z-index: 4; /* and place it over the hamburger */
   
   -webkit-touch-callout: none;
 }
@@ -728,7 +729,7 @@ body::-webkit-scrollbar-track {
   background: var(--footerColor);
   border-radius: 3px;
   
-  z-index: 1;
+  z-index: 3;
   
   transform-origin: 4px 0px;
   
@@ -795,11 +796,10 @@ body::-webkit-scrollbar-track {
 }
 
 #menu {
-  position: fixed;
-  right: 0;
   background-color: var(--color3);
   list-style: none;
   z-index: 2;
+  
 }
 
 #menu li{
