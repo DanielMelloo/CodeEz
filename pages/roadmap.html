@@ -21,7 +21,7 @@
             <nav role="navigation" id="menuNav">
                 <div id="menuToggle">
 
-                    <input id="button-menu" type="checkbox" />
+                    <input id="button-menu" type="checkbox"/>
                     
                     <span></span>
                     <span></span>
@@ -39,19 +39,25 @@
 
 
                     <li>
-                        <input class="mark" type="checkbox"/>Percurso
+                        <input type="checkbox" id="percurso">
+                        <label class="lbInput" for="percurso">Percurso</label>
+                        <img class= "arrow" src="../assets/arrow.png" alt=".">
                            
                         <ul>
                             <li>
                                 <a href="#">RoadMap</a>
                             </li>
                             <li>                                
-                                <input class="mark" type="checkbox"/> 
-                                Nível 0
+                                <input type="checkbox" id="level0">
+                                <label class="lbInput" for="level0">Nível 0</label>
+                                <img loading="lazy" class= "arrow" src="../assets/arrow.png" alt=".">
 
                                 <ul>
                                     <li>
-                                        <input class="mark" type="checkbox" /> Amazenamento de Dados
+                                        <input type="checkbox" id="dataStorage">
+                                        <label class="lbInput" for="dataStorage">Amazenamento de Dados</label>
+                                        <img loading="lazy" class= "arrow" src="../assets/arrow.png" alt=".">
+
                                         <ul>
                                             <li>
                                                 <a href="./level0/dataStorage/ramMemory.html">
@@ -69,7 +75,10 @@
                                     </li>
 
                                     <li>
-                                        <input class="mark" type="checkbox" /> Processamento de Dados
+                                        <input type="checkbox" id="dataProcessing">
+                                        <label class="lbInput" for="dataProcessing">Processamento de Dados</label>
+                                        <img loading="lazy" class= "arrow" src="../assets/arrow.png" alt=".">
+
                                         <ul>
                                             <li>
                                                 <a href="./level0/dataProcessing/randomAcess.html">
@@ -87,7 +96,10 @@
                                     </li>
 
                                     <li>
-                                        <input class="mark" type="checkbox" /> Limitações do Computador
+                                        <input type="checkbox" id="computerLimitations">
+                                        <label class="lbInput" for="computerLimitations">Limitações do Computador</label>
+                                        <img loading="lazy" class= "arrow" src="../assets/arrow.png" alt=".">
+
                                         <ul>
                                             <li>
                                                 <a href="./level0/computerLimitations/fileSize.html">
@@ -107,10 +119,16 @@
                             </li>
 
                             <li>
-                                <input class="mark" type="checkbox" /> Nível 1
+                                <input type="checkbox" id="level1">
+                                <label class="lbInput" for="level1">Nível 1</label>
+                                <img loading="lazy" class= "arrow" src="../assets/arrow.png" alt=".">
+
                                 <ul>
                                     <li>
-                                        <input class="mark" type="checkbox" /> Tipos de Dados
+                                        <input type="checkbox" id="dataType">
+                                        <label class="lbInput" for="dataType">Tipos de Dados</label>
+                                        <img loading="lazy" class= "arrow" src="../assets/arrow.png" alt=".">
+                                        
                                         <ul>
                                             <li>
                                                 <a href="./level1/datatype/inteiro.html">Inteiro</a>
@@ -135,51 +153,10 @@
                                     </li>
                                 </ul>
                             </li>
-
-                            <!-- <li>
-                                <input class="mark" type="checkbox" /> Algo 3
-                                <ul>
-                                    <li>Algo 1.2</li>
-                                    <li>Algo 2.2</li>
-                                    <li>Algo 3.2</li>
-                                </ul>
-                            </li> -->
                             
                         </ul>
 
                     </li>
-
-                    <!-- <li>
-                        <input type="checkbox" /> Level 2
-
-                        <ul>
-                            <li>
-                                Algo 1
-                                <ul>
-                                    <li>Algo 1.2</li>
-                                    <li>Algo 2.2</li>
-                                    <li>Algo 3.2</li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                Algo 2
-                                <ul>
-                                    Algo 2.2
-                                </ul>
-                            </li>
-
-                            <li>
-                                Algo 3
-                                <ul>
-                                    Algo 3.2
-                                </ul>
-                            </li>
-                            
-                        </ul>
-                    </li> -->
-
-                    <!-- <li>Level 3</li> -->
 
                     <li>
                         <a href="./form.html">Questionário</a>
@@ -189,7 +166,6 @@
 
                 </div>
             </nav>
-
 
         </div>
 

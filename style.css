@@ -699,10 +699,14 @@ body::-webkit-scrollbar-track {
   color: #232323;
   
   transition: color 0.3s ease;
+  
 }
 
 #menuToggle a:hover{
   color: var(--hoverColor2);
+  padding-left: calc(0.5rem + 5px);
+  border-left: var(--color1) solid 5px;
+  transition: all .3s;
 }
 
 #menuToggle input{
@@ -805,6 +809,7 @@ body::-webkit-scrollbar-track {
   border-top: solid 1px black;
   border-bottom: solid 1px black;
   padding: var(--defaltPaddingMargin);
+  
 }
 
 #menu ul {
@@ -817,12 +822,76 @@ body::-webkit-scrollbar-track {
   cursor: pointer;
 
   -webkit-touch-callout: none;
-  width: 5rem;
+  width: 1rem;
   height: 1rem;
   position: absolute;
-  
+  transition: color 0.3s ease;
 }
 
 #menu input:checked ~ ul {
   display: block;
+}
+
+#menu input:hover ~ label{
+  color: var(--hoverColor2);
+  padding-left: calc(0.5rem + 5px);
+  border-left: var(--color1) solid 5px;
+  transition: all .3s;
+}
+
+#menu input:not(:hover) ~ label{
+  color: var(--fontColor);
+  padding-left: 0;
+  border-left: unset;
+  transition: all .3s;
+}
+
+#menu input:checked ~ img {
+  rotate: 90deg;
+  transition: all .3s;
+}
+
+#menu input:not(:checked) ~ img {
+  rotate: 0;
+  transition: all .3s;
+}
+
+#menu input:hover ~ img {
+  rotate: 90deg;
+  transition: all .3s;
+}
+
+#menu input:not(:hover) ~ img {
+  rotate: 0;
+  transition: all .3s;
+}
+
+.arrow {
+  width: 0.5rem;
+  align-self: center;
+  justify-self: center;
+}
+
+#menu .lbInput {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#menu .lbInput:hover {
+  color: var(--hoverColor2);
+  padding-left: calc(0.5rem + 5px);
+  border-left: var(--color1) solid 5px;
+  transition: all .3s;
+}
+
+#menu input:checked ~ label{
+  color: var(--color1);
+  border-left: var(--color1) solid 5px;
+  
+}
+
+#menu input:not(:checked) ~ label{
+  color: var(--fontColor);
+  border-left: unset;
+  transition: color 0.3s ease;
 }
