@@ -679,9 +679,6 @@ body::-webkit-scrollbar-track {
 }
  
 
-
-
-
 #menuToggle{  
   display: block;
 
@@ -828,9 +825,11 @@ body::-webkit-scrollbar-track {
   transition: color 0.3s ease;
 }
 
+
 #menu input:checked ~ ul {
   display: block;
 }
+
 
 #menu input:hover ~ label{
   color: var(--hoverColor2);
