@@ -2,14 +2,14 @@
 
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/DanielMelloo/Site-Prodocencia?style=for-the-badge)
-![GitHub Site](https://img.shields.io/website?down_color=important&down_message=offline&style=for-the-badge&up_color=lime&up_message=Online&url=https%3A%2F%2Fdanielmelloo.github.io%2FSite-Prodocencia%2F)
+![GitHub Site](https://img.shields.io/website?down_color=important&down_message=offline&style=for-the-badge&up_color=lime&up_message=Online&url=https%3A%2F%2Fdanielmelloo.github.io%2FCodeEz%2F)
 ![GitHub forks](https://img.shields.io/github/forks/DanielMelloo/Site-Prodocencia?style=for-the-badge)
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues-raw/DanielMelloo/Site-Prodocencia?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/DanielMelloo/Site-Prodocencia?style=for-the-badge)
 
 <img src="https://cdn.discordapp.com/attachments/1028505420475674685/1043301866911580160/landingpage.jpg" alt="Landing Page">
 
-> [Landing Page do Site](https://danielmelloo.github.io/Site-Prodocencia/).
+> [Landing Page do Site](https://danielmelloo.github.io/CodeEz).
 
 ### Ajustes e melhorias
 
