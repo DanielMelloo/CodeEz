@@ -682,8 +682,8 @@ body::-webkit-scrollbar-track {
 
 
 
-#menuToggle
-{  display: block;
+#menuToggle{  
+  display: block;
 
   padding: var(--defaltPaddingMargin);
   
@@ -692,34 +692,20 @@ body::-webkit-scrollbar-track {
   -webkit-user-select: none;
   user-select: none;
 
-
-  /* display: block;
-  position: relative;
-  top: 50px;
-  left: 50px;
-  
-  z-index: 1;
-  
-  -webkit-user-select: none;
-  user-select: none; */
 }
 
-#menuToggle a
-{
+#menuToggle a{
   text-decoration: none;
   color: #232323;
   
   transition: color 0.3s ease;
 }
 
-#menuToggle a:hover
-{
+#menuToggle a:hover{
   color: var(--hoverColor2);
 }
 
-
-#menuToggle input
-{
+#menuToggle input{
   /* display: block; */
   width: 40px;
   height: 32px;
@@ -733,8 +719,7 @@ body::-webkit-scrollbar-track {
   -webkit-touch-callout: none;
 }
 
-#menuToggle span
-{
+#menuToggle span{
   display: block;
   width: 33px;
   height: 4px;
@@ -753,63 +738,92 @@ body::-webkit-scrollbar-track {
               opacity 0.55s ease;
 }
 
-#menuToggle span:first-child
-{
+#menuToggle span:first-child{
   transform-origin: 0% 0%;
 }
 
-#menuToggle span:nth-last-child(2)
-{
+#menuToggle span:nth-last-child(2){
   transform-origin: 0% -100%;
 }
 
-
-#menuToggle input:checked ~ span
-{
+#menuToggle input:checked ~ span{
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: var(--footerColor);
 }
 
-
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
+#menuToggle input:checked ~ span:nth-last-child(3){
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
+#menuToggle input:checked ~ span:nth-last-child(2){
   transform: rotate(-45deg) translate(0, -1px);
 }
 
-#menu
-{
+#menu{
   position: absolute;
-  width: 300px;
+  min-width: 300px;
+  height: auto;
+  /* margin: 0 -50px 0 0; */
   margin: -50px 0 0 -200px;
-  padding: 50px;
+  padding: var(--defaltPaddingMargin);
   padding-top: 50px;
+
+  /* background: #162447; */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
   
   background: var(--color3);
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
   
   transform-origin: 0% 0%;
   transform: translate(100%, 0);
   
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
 }
 
-#menu li
-{
-  padding: 10px 0;
+.menu li{
+  padding: 10px;
   font-size: 22px;
+  
 }
 
-
-#menuToggle input:checked ~ ul
-{
+#menuToggle input:checked ~ ul{
   transform: none;
+}
+
+#menu {
+  background-color: var(--color3);
+  list-style: none;
+  
+}
+
+#menu li{
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+  padding: var(--defaltPaddingMargin);
+}
+
+#menu ul {
+  display: none;
+  list-style: none;
+}
+
+#menu input{
+  display: block;
+  cursor: pointer;
+
+  -webkit-touch-callout: none;
+  width: 5rem;
+  height: 1rem;
+  position: absolute;
+  
+}
+
+#menu input:checked ~ ul {
+  display: block;
 }

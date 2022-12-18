@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() { // On DOM Load initia
 const typedTextSpanToolTips = document.querySelector(".typedTextToolTips");
 const cursorSpanToolTips = document.querySelector(".cursorToolTips");
 
-const textArrayToolTips = ["<-- Clique no card para mais informações -->"];
+const textArrayToolTips = ["<-- Clique no card para ver o projeto -->"];
 const typingDelayToolTips = 50;
 const erasingDelayToolTips = 5;
 const newTextDelayToolTips = 2000; // Delay between current and next text
