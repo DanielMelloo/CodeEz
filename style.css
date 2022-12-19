@@ -155,6 +155,7 @@
   width: 3px;
   animation: blink 1s infinite;
 }
+
 .container h3 span.cursor.typing {
   animation: none;
 }
@@ -276,7 +277,6 @@ body {
   border: solid black
 }
 
-
 .tabs {
   display: var(--displayM);
   margin: var(--defaltPaddingMargin);
@@ -288,7 +288,6 @@ body {
   align-items: center;
 
 }
-
 
 #menu-img {
   width: 32px;
@@ -377,7 +376,6 @@ body {
   min-height: var(--defaltHeightFormInner);
   
 }
-
 
 .buttons h3{
   padding-left: var(--defaltPaddingMargin );
@@ -496,7 +494,6 @@ body::-webkit-scrollbar-track {
   background: var(--hoverColor);
 
 }
-
 
 *,
 *:before,*:after {
@@ -627,7 +624,6 @@ body::-webkit-scrollbar-track {
   }
 }
 
-
 .typing-effect h3{
   margin: 0;
   
@@ -655,17 +651,18 @@ body::-webkit-scrollbar-track {
   to { width: 0 }
 }
 
-#RoadMap{
+.externalMaterial {
   width: auto;
   padding: var(--defaltPaddingMargin);
   margin: var(--defaltPaddingMargin);
   /* height: ; */
   border-radius: var(--sectionBorderRadius);
   background-image: var(--backgroundImageGradient);
+}
 
-  /* width="768" height="432" 
-  src="https://miro.com/app/live-embed/uXjVPA2Yxo0=/?moveToViewport=60,-87,911,417&embedId=616819663725" 
-  frameborder="0" scrolling="no" allowfullscreen></iframe> */
+#iframeComputerArqQuiz{
+  width: var(--defaltWidthRoadMap);
+  height: var(--defaltHeightRoadMap);
 }
 
 #iframeRoadMap{
@@ -678,7 +675,6 @@ body::-webkit-scrollbar-track {
   margin-top: var(--textPaddingMargin);
 }
  
-
 #menuToggle{  
   display: block;
 
@@ -825,11 +821,9 @@ body::-webkit-scrollbar-track {
   transition: color 0.3s ease;
 }
 
-
 #menu input:checked ~ ul {
   display: block;
 }
-
 
 #menu input:hover ~ label{
   color: var(--hoverColor2);
