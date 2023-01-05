@@ -761,11 +761,15 @@ body::-webkit-scrollbar-track {
 #menu{
   position: absolute;
   min-width: 250px;
+  min-height: auto;
+  max-height: 90vh;
   width: auto;
-  height: auto;
-  margin: -50px 0 0 -180px;
+  /* height: 100%; */
+  overflow-y: scroll;
+
+  right: -10px;
+  margin-top: 30px;
   padding: var(--defaltPaddingMargin);
-  padding-top: 50px;
 
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, .5);
@@ -784,12 +788,10 @@ body::-webkit-scrollbar-track {
 .menu li{
   padding: 10px;
   font-size: var(--fontSizeMenu);
-  
 }
 
 #menuToggle input:checked ~ ul{
   transform: none;
-  right: 0;
 }
 
 #menu {
