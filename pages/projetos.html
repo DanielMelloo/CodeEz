@@ -204,16 +204,26 @@
         
         <div class="headerInv"></div>
 
-        <div class="main">
+        <div class="main" id='main'>
+
+            <section class="topics-title">
+                
+                <div class="container-swap">
+                    <h1>Programar é </h1>
+                    <h3><span class="typedTextSwap hidden">
+                        </span><span class="cursorSwap">&nbsp;</span>
+                    </h3>
+                </div>
+            </section>
 
             <section class="topics-title">
                 Ideias que podem virar realidade usando programação
                 <div class="container">
-                    <h3><span class="typed-text"></span><span class="cursor">&nbsp;</span></h3>
+                    <h3><span class="typed-text"></span></h3>
                 </div>
             </section>
 
-            <section class="topics">
+            <section onmouseover="isMouseHoverOnIt(this)" onmouseout="isntMouseHoverOnIt(this)"  class="topics">
                 <div class="flip-card">
                     <a href="https://danielmelloo.github.io/-portfolio/" target="_blank" rel="noopener noreferrer">
                         <div class="flip-card-inner">
@@ -231,7 +241,10 @@
                                 </h3>
 
                                 <div class="container-toolTips">
-                                    <h3><span class="typedTextToolTips"></span><span class="cursorToolTips">&nbsp;</span></h3>
+                                    
+                                    <h3 class="typedTextToolTips tip1 hidden">
+                                        <span class="cursorToolTips">&nbsp;</span>
+                                    </h3>
                                 </div>
 
                             </div>

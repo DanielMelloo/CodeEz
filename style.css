@@ -1,4 +1,4 @@
-:root {
+  :root {
 
   /* ================== */
   /* Varáveis Numéricas */
@@ -180,11 +180,11 @@
 }
 
 @keyframes blink {
-  0%  { background-color: var(--color5); }
-  49% { background-color: var(--color5); }
+  0%  { background-color: black; }
+  49% { background-color: black; }
   50% { background-color: transparent; }
   99% { background-color: transparent; }
-  100%  { background-color: var(--color5); }
+  100%  { background-color: black; }
 }
 
 html {
@@ -213,9 +213,12 @@ body {
   display: flex;
   flex-direction: column;
 
+  justify-content: space-between;
+
   font-family: monospace;
   font-family: 'Tech';
   font-size: 20px;
+  
 }
 
 .header {
@@ -247,11 +250,11 @@ body {
 }
 
 .headerInv {
-  display: flex;
   height: 15vh;
   max-height: 72px;
   width: 100%;
-  z-index: 1;
+  top: 0;
+  left: 0;
 }
 
 .menu {
@@ -316,6 +319,8 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  padding: 2vh;
 }
 
 
@@ -624,6 +629,11 @@ body::-webkit-scrollbar-track {
   }
 }
 
+.typedTextToolTips{
+  min-height: 2em;
+  min-width: 1em;
+}
+
 .typing-effect h3{
   margin: 0;
   
@@ -845,7 +855,6 @@ body::-webkit-scrollbar-track {
   rotate: 90deg;
   transition: all .3s;
 }
-
 #menu input:not(:checked) ~ img {
   rotate: 0;
   transition: all .3s;

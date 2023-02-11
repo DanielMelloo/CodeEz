@@ -1,9 +1,12 @@
+// https://github.com/DanielMelloo/CodeEz
+
+
 // $(document).ready(function() { 
 //   window.location.href='#roadMapIndex';
 //   });
 
 
-var checkbox = $('#button-menu');
+let checkbox = $('#button-menu');
 
 $('body').not('menuNav').click(function() {
   checkbox.prop("checked", false);
@@ -11,146 +14,229 @@ $('body').not('menuNav').click(function() {
 
 $('#button-menu, #menuNav').click(function(event) {
   event.stopPropagation();
-
-});
-
-
-const typedTextSpan = document.querySelector(".typed-text");
-const cursorSpan = document.querySelector(".cursor");
-
-const textArray = ["<-- Para visualizar informações adicionais, mantenha pressionado o card desejado por alguns instantes -->"];
-const typingDelay = 50;
-const erasingDelay = 5;
-const newTextDelay = 2000; // Delay between current and next text
-let textArrayIndex = 0;
-let charIndex = 0;
-
-function type() {
-  if (charIndex < textArray[textArrayIndex].length) {
-    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-    charIndex++;
-    setTimeout(type, typingDelay);
-  } 
-  else {
-    cursorSpan.classList.remove("typing");
-  	setTimeout(erase, newTextDelay);
-  }
-}
-
-function erase() {
-	if (charIndex > 0) {
-    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
-    charIndex--;
-    setTimeout(erase, erasingDelay);
-  } 
-  else {
-    cursorSpan.classList.remove("typing");
-    textArrayIndex++;
-    if(textArrayIndex>=textArray.length) textArrayIndex=0;
-    setTimeout(type, typingDelay + 1100);
-  }
-}
-
-document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
-  if(textArray.length) setTimeout(type, newTextDelay + 250);
 });
 
 
 
 
-const typedTextSpanToolTips = document.querySelector(".typedTextToolTips");
-const cursorSpanToolTips = document.querySelector(".cursorToolTips");
+// ================ //
+// Seletores do DOM //
+// ================ //
 
-const textArrayToolTips = ["<-- Clique no card para ver o projeto -->"];
-const typingDelayToolTips = 50;
-const erasingDelayToolTips = 5;
-const newTextDelayToolTips = 2000; // Delay between current and next text
-let textArrayToolTipsIndexToolTips = 0;
+
+const typedTextSpanSwap = document.querySelector(".typedTextSwap");
+const cursorSpanSwap = document.querySelector(".cursorSwap");
+let sectionOfTypedTextString = document.getElementById('main').children[1];
+let typedTextString
+let cursorSpanToolTips 
+
+
+// ====== //
+// Delays //
+// ====== //
+
+// Strings
+
+const newTextDelayToolTips = 50; // Delay between current and next text strings
+const erasingDelayToolTips = 15;  
+const initTypingDelayToolTips = 500;
+const initEraseDelayToolTips = 1000;
+
+// Swap
+
+const typingDelaySwap = 200;
+const erasingDelaySwap = 50;
+const initTypingDelaySwap = 350;
+const initErasingDelaySwap = 500;
+
+
+// ======= //
+// Indexes //
+// ======= //
+
+
 let charIndexToolTips = 0;
+let arrayToUse = 0;
 
-function typeToolTips() {
-  if (charIndexToolTips < textArrayToolTips[textArrayToolTipsIndexToolTips].length) {
-    if(!cursorSpanToolTips.classList.contains("typing")) cursorSpanToolTips.classList.add("typing");
-    typedTextSpanToolTips.textContent += textArrayToolTips[textArrayToolTipsIndexToolTips].charAt(charIndexToolTips);
-    charIndexToolTips++;
-    setTimeout(typeToolTips, typingDelayToolTips);
-  } 
-  else {
-    cursorSpanToolTips.classList.remove("typing");
-  	setTimeout(eraseToolTips, newTextDelayToolTips);
-  }
-}
 
-function eraseToolTips() {
-	if (charIndexToolTips > 0) {
-    if(!cursorSpanToolTips.classList.contains("typing")) cursorSpanToolTips.classList.add("typing");
-    typedTextSpanToolTips.textContent = textArrayToolTips[textArrayToolTipsIndexToolTips].substring(0, charIndexToolTips-1);
-    charIndexToolTips--;
-    setTimeout(eraseToolTips, erasingDelayToolTips);
-  } 
-  else {
-    cursorSpanToolTips.classList.remove("typing");
-    textArrayToolTipsIndexToolTips++;
-    if(textArrayToolTipsIndexToolTips>=textArrayToolTips.length) textArrayToolTipsIndexToolTips=0;
-    setTimeout(typeToolTips, typingDelayToolTips + 1100);
-  }
-}
+let textArraySIndexSwap = 0;
+let charIndexSwap = 0;
+
+
+// ============= //
+// Arrays to Use //
+// ============= //
+
+
+const textArraySwap = ["Desafiador","Evoluir","Aprender","Legal","Vida"];
+const textArraysToolTips = [
+    '<-- Clique no card para ver o projeto -->',
+    '<-- Para visualizar informações adicionais, mantenha pressionado o card desejado por alguns instantes -->',
+    '<-- Clique no card para mais informações -->',
+    '<-- Clique no card para acessar o RoadMap -->',
+]
+
+const observer = new IntersectionObserver ((entries) => {
+    entries.forEach((entry) => {
+    
+    if (entry.target.classList.contains('hidden')){
+        typedTextString =  entry.target
+        cursorSpanToolTips = typedTextString.children[0];
+    }
+
+    if (entry.isIntersecting){
+        entry.target.classList.add('show');
+        
+        typedTextString = entry.target;        
+        cursorSpanToolTips = typedTextString.children[0];
+    }
+    else{
+        entry.target.classList.remove('show');
+        
+        eraseStringWithOutDelay(entry.target);    
+    }
+
+  });
+
+});
+
+const hiddenSection = document.querySelectorAll('.hidden');
+hiddenSection.forEach((el) => observer.observe(el));
 
 document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
-  if(textArrayToolTips.length) setTimeout(typeToolTips, newTextDelayToolTips + 250);
+    
+    if(textArraySwap.length) {
+        setTimeout(typeS, initErasingDelaySwap);
+    }
+
+    if(textArraysToolTips[arrayToUse].length){
+        setTimeout(typeStringRefac, newTextDelayToolTips);
+    }
 });
 
 
+function typeStringRefac () {
+
+    
+    
+    let indexToGetNumber = typedTextString.getAttribute('class').indexOf('tip') + 3;
+
+    
+    if (typedTextString.classList.contains('show')){
+        arrayToUse =  parseInt(typedTextString.getAttribute('class')[indexToGetNumber], 10) - 1;
+    }
+
+    
+    if ( charIndexToolTips < textArraysToolTips[arrayToUse].length && (typedTextString.classList.contains('show') && !sectionOfTypedTextString.classList.contains('hoveHide') )){
+
+        if( !cursorSpanToolTips.classList.contains("typing") ) {
+            cursorSpanToolTips.classList.add("typing");
+            
+        }
+        
+        cursorSpanToolTips.textContent += textArraysToolTips[arrayToUse][charIndexToolTips];
+        charIndexToolTips++;
+        setTimeout(typeStringRefac, newTextDelayToolTips);
+    
+    }
+    
+    else {
+        
+        cursorSpanToolTips.classList.remove("typing");
+        setTimeout(eraseStringRefac, initEraseDelayToolTips);
+    }
+    
+}
+
+function eraseStringRefac() {
+
+    if (charIndexToolTips > 0) {
+
+        if(!cursorSpanToolTips.classList.contains("typing")) {
+            cursorSpanToolTips.classList.add("typing");
+        }
+
+        cursorSpanToolTips.textContent = textArraysToolTips[arrayToUse].substring(0, charIndexToolTips-1);
+        
+        
+        charIndexToolTips--;
+        setTimeout(eraseStringRefac, erasingDelayToolTips);
+    } 
+
+    else {
+        cursorSpanToolTips.classList.remove("typing");
+        setTimeout(typeStringRefac, initTypingDelayToolTips);
+    }
+}
+
+function eraseStringWithOutDelay (el){
+
+    if (!el.classList.contains('show')){
+        
+        cursorSpanToolTips.textContent = '';
+        cursorSpanToolTips.classList.remove("typing");
+    }
+}
+
+function isMouseHoverOnIt (element){
+    element.classList.remove("hoveHide")
+    sectionOfTypedTextString = element
+}
+
+function isntMouseHoverOnIt (element){
+    element.classList.add("hoveHide")
+}
 
 
 
+// ============== //
+// Swap Text Init //
+// ============== //
 
-
-
-const typedTextSpanS = document.querySelector(".typedTextSwap");
-const cursorSpanS = document.querySelector(".cursorSwap");
-
-const textArrayS = ["Desafiador","Evoluir","Aprender","Legal","Vida"];
-const typingDelayS = 200;
-const erasingDelayS = 50;
-const newTextDelayS = 500; // Delay between current and next text
-let textArraySIndexS = 0;
-let charIndexS = 0;
 
 function typeS() {
-  if (charIndexS < textArrayS[textArraySIndexS].length) {
-    if(!cursorSpanS.classList.contains("typing")) cursorSpanS.classList.add("typing");
-    typedTextSpanS.textContent += textArrayS[textArraySIndexS].charAt(charIndexS);
-    charIndexS++;
-    setTimeout(typeS, typingDelayS);
-  } 
-  else {
-    cursorSpanS.classList.remove("typing");
-  	setTimeout(eraseS, newTextDelayS);
-  }
+
+    if (charIndexSwap < textArraySwap[textArraySIndexSwap].length){
+
+        if(!cursorSpanSwap.classList.contains("typing")) cursorSpanSwap.classList.add("typing");
+        typedTextSpanSwap.textContent += textArraySwap[textArraySIndexSwap].charAt(charIndexSwap);
+        charIndexSwap++;
+        setTimeout(typeS, typingDelaySwap);
+    }
+    
+    else {
+      cursorSpanSwap.classList.remove("typing");
+      setTimeout(eraseS, initErasingDelaySwap);
+    }
 }
 
 function eraseS() {
-	if (charIndexS > 0) {
-    if(!cursorSpanS.classList.contains("typing")) cursorSpanS.classList.add("typing");
-    typedTextSpanS.textContent = textArrayS[textArraySIndexS].substring(0, charIndexS-1);
-    charIndexS--;
-    setTimeout(eraseS, erasingDelayS);
-  } 
-  else {
-    cursorSpanS.classList.remove("typing");
-    textArraySIndexS++;
-    if(textArraySIndexS>=textArrayS.length) textArraySIndexS=0;
-    setTimeout(typeS, typingDelayS + 1100);
-  }
+	if (charIndexSwap > 0) {
+
+        if(!cursorSpanSwap.classList.contains("typing")){
+            cursorSpanSwap.classList.add("typing");
+        }
+
+        typedTextSpanSwap.textContent = textArraySwap[textArraySIndexSwap].substring(0, charIndexSwap-1);
+        charIndexSwap--;
+        setTimeout(eraseS, erasingDelaySwap);
+    } 
+    else {
+        cursorSpanSwap.classList.remove("typing");
+        textArraySIndexSwap++;
+
+        if(textArraySIndexSwap>=textArraySwap.length) {
+            textArraySIndexSwap=0;
+        }
+
+        setTimeout(typeS, initTypingDelaySwap);
+    }
 }
 
-document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
-  if(textArrayS.length) setTimeout(typeS, newTextDelayS + 250);
-});
 
+// ============= //
+// Swap Text end //
+// ============= //
 
 
 
