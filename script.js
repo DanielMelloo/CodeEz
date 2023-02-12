@@ -26,6 +26,7 @@ $('#button-menu, #menuNav').click(function(event) {
 
 const typedTextSpanSwap = document.querySelector(".typedTextSwap");
 const cursorSpanSwap = document.querySelector(".cursorSwap");
+
 let sectionOfTypedTextString = document.getElementById('main').children[1];
 let typedTextString
 let cursorSpanToolTips 

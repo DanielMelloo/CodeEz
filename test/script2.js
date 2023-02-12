@@ -4,8 +4,10 @@
 // | Gabriel | //
 // =========== //
 
-function progressiveWriter (id, message, timing) {
+async function progressiveWriter (id, message, timing) {
     
+    console.log(`start: ${id}`);
+
     // achar elemento
     let element = document.getElementById(id);
     // console.log(element);
@@ -15,9 +17,14 @@ function progressiveWriter (id, message, timing) {
     // console.log(textZone);
 
     // adicionar zona de texto
-    element.parentElement.appendChild(textZone);
+    element.parentElement.appendChild(textZone);  // breaking?!
     console.log(element);
 
+    // adicionar texto
+    textZone.textContent = message;
+
+
+    console.log(`end: ${id}`);
     
     /* 
 
@@ -33,15 +40,45 @@ function progressiveWriter (id, message, timing) {
      */
 }
 
-progressiveWriter("testCard1Content");
-
-
-// progressiveWriter(document.getElementById("testCard"), "message_text");
-
-async function sleep (ms) {
-    return await new Promise((resolve)=>setTimeout(resolve, ms));
+async function addChar (sentence, letter) {
+    sentence += letter;
 }
 
-/* Objetivo do site
-Ensinar e orientar estudantes que estão entrando na programação agora, ou que já possuem alguma prática.
- */
+async function removeChar (sentence) {
+    sentence -= 1;
+}
+
+// progressiveWriter("testCard1Content", "subtext message");
+
+
+async function parallelCounter (limit, id) {
+    for(let i = 0; i <= limit; i++){
+        await console.log(`${id}: ${i}`);
+    }
+}
+
+async function parallelTyper (limit, id) {
+    for(let i = 0; i <= limit; i++){
+        await console.log(`${id}: ${i}`);
+    }
+}
+
+async function testing () {
+    console.log("pre-sleep");
+    await sleep(3000);
+    console.log("pos-sleep");
+}
+
+// progressiveWriter(document.getElementById("testCard"), "message_text");
+function sleep (ms) {
+    return new Promise((resolve)=>setTimeout(resolve, ms));
+}
+
+// ============
+//  execution:
+// ============
+
+// parallelCounter(1000, "function-1");
+// parallelCounter(1000, "function-2");
+progressiveWriter("testCard1Content")
+progressiveWriter()
