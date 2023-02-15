@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style2.css">
         <script src="sleep.js"></script>
-        <script src="progressiveWriter.js"></script>
+        <script src="progressiveWriter.js" defer></script>
         <!-- <script src="script2.js" defer></script> -->
     </head>
     <body>
@@ -21,13 +21,16 @@
         <![endif]-->
         
         <div id="testCard1Container">
-            <h3 id="testCard1Content">[test card 1 text]</h3>
-            <span id="progressiveWriterTarget1" class="progressiveWriterFlag" onclick="progressiveWriter1(this)">subtext-1 (click-me-once)</span>
+            <h3 id="testCard1Content">
+                [test card 1 text]
+            </h3>
+            <span id="progressiveWriterTarget1" progressiveWriting  progressiveWritingDelay=300 progressiveWritingPause=1000>
+                subtext-1 (click-me-once)
+            </span>
         </div>
-
         <div id="testCard2Container">
             <h3 id="testCard2Content">[test card 2 text]</h3>
-            <span id="progressiveWriterTarget2" class="progressiveWriterFlag" onclick="progressiveWriter1(this)">subtext-2 (click-me-once)</span>
+            <span id="progressiveWriterTarget2" progressiveWriting  progressiveWritingDelay=300 progressiveWritingPause=1000>subtext-2 (click-me-once)</span>
         </div>
 
         

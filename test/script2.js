@@ -80,19 +80,38 @@ async function progressiveWriter1(element, delay = 100){
 
 }
 
-/* 
- * >>> Broken!!! <<<
- * recebe uma "class"(flag) & aplica o efeito em todos os elementos que tem a flag 
- * depende de "progressiveWriter1()"
- * depende de "sleep()"
-*/
-async function progressiveWriter2(classFlag){
-    let elementGroup = document.querySelectorAll(`.${classFlag}`);
-    
-    for(let i in elementGroup){
-        await progressiveWriter1(elementGroup[i]);
-    }
-}
+
+
+
+
+
+const targets = document.querySelectorAll('');
+
+
+const intObsAsign = target => { console.log(target)}
+
+targets.forEach(intObsAsign)
+
+const intObs = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+        
+        console.log("[signal]");
+
+        if(entry.isIntersecting){
+            const element = entry.target;
+            progressiveWriter1(element);
+            observer.disconnect();
+        }
+    });
+});
+
+// (...)
+
+
+
+
+
+
 
 // ===============
 //  funções-end
