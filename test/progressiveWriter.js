@@ -73,15 +73,13 @@ document.querySelectorAll("[progressiveWriting]").forEach((target) => { // selec
                 // console.log(`intersect: ${entry}`);
                 // console.log(entry.target);
                 let element = entry.target;
-                let delay; 
-                let pause;
-    
-                progressiveWriter1(entry.target);
+                let delay = element.getAttribute("progressiveWritingDelay"); 
+                let pause = element.getAttribute("progressiveWritingDelay");
+                // console.log(element.getAttribute("progressiveWritingDelay"));
+                progressiveWriter1(element, delay, pause);
                 observer.disconnect(); // faz executar uma vez só
             }
         })
-        let entry = entries[0]; 
-
     }, {
         // especifica a  [Viewport]:
         root: document.querySelector('#scrollArea'),
